@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./app1
+    ports:
+      - '5000:5000'
+      networks:
+      -E-commerce-network
+  app2:
+    build:
+      context: ./app2
+    ports:
+      - '5001:5001'
+      networks:
+      -E-commerce-network
+  app3:
+    build:
+      context: ./app3
+    ports:
+      - '5002:5002'
+      networks:
+      -E-commerce-network
+  app4:
+    build:
+      context: ./app4
+    ports:
+      - '5003:5003'
+      networks:
+      -E-commerce-network
+  hub:
+    build:
+      context: ./hub
+    ports:
+      - '5004:5004'
+      networks:
+      -E-commerce-network
+      
+   networks:
+  E-commerce-network:
+    driver: bridge
+
+      
+      
